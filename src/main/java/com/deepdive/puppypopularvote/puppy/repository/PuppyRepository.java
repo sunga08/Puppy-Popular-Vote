@@ -5,7 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PuppyRepository extends JpaRepository<Puppy, Long> {
-    List<Puppy> findByName(@Param("name") String name);
+
+    Optional<List<Puppy>> findAllBy();
+    Optional<Puppy> findByName(@Param("name") String name);
 }

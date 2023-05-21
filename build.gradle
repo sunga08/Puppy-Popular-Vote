@@ -23,8 +23,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	//implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
-	compileOnly 'org.projectlombok:lombok'
+
+	//DB 설정
 	runtimeOnly 'com.h2database:h2:1.4.200'
+
+	//swagger 설정
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
+
+	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

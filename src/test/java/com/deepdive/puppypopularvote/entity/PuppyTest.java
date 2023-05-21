@@ -35,7 +35,7 @@ public class PuppyTest {
         puppyRepository.save(puppy4);
         puppyRepository.save(puppy5);
 
-        List<Puppy> puppies = puppyRepository.findAll();
+        List<Puppy> puppies = puppyRepository.findAll().orElseThrow();
 
         for (Puppy pup : puppies) {
             System.out.println(pup.getName());
@@ -45,8 +45,7 @@ public class PuppyTest {
 
     @Test
     public void findPuppy(){
-        List<Puppy> list = puppyRepository.findByName("코코");
-        Puppy puppy = list.get(0);
+        Puppy puppy = puppyRepository.findByName("코코").orElseThrow();
 
         System.out.println(puppy.getName());
 
